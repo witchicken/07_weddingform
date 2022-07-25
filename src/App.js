@@ -11,21 +11,9 @@ function App() {
       .then((res) => console.log(res))
       .catch();
   }, []);
-  const send = () => {
-    axios
-      .get("/api/marriageform")
-      .then((res) => console.log(res))
-      .catch();
-  };
+
   return (
     <div className="App">
-      <button
-        onClick={() => {
-          send();
-        }}
-      >
-        보내기버튼
-      </button>
       <RegisterForm />
     </div>
   );
