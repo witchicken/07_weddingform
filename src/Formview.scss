@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Song+Myung&display=swap");
+@font-face {
+  font-family: "WONBatang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/WONBatang.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+ul {
+  list-style-type: none;
+}
+.Formview {
+  background-color: black;
+  text-align: center;
+  font-family: "Song Myung", serif;
+  color: rgba(1, 1, 1, 0.8);
+  .inner {
+    max-width: 420px;
+    margin: 0 auto;
+    background-color: rgba(255, 230, 240, 1);
+    height: 3000px;
+    .Top {
+      position: relative;
+      .Top_name {
+        padding: 30px 0;
+        font-size: 36px;
+        font-family: "Nanum Pen Script", cursive;
+      }
+      .Top_image {
+        width: 350px;
+        height: 500px;
+        margin: 0 auto;
+        background-color: rgb(204, 159, 190);
+        border-radius: 20px;
+        font-size: 20px;
+      }
+      .Top_location {
+        margin-top: 20px;
+        p {
+          font-size: 36px;
+        }
+        span {
+          font-size: 36px;
+        }
+      }
+      .Top_phone {
+        margin: 0 auto;
+        margin-top: 50px;
+        width: 250px;
+        p {
+          font-size: 23px;
+          display: flex;
+          justify-content: space-between;
+          div {
+            .link_phone {
+              margin-right: 30px;
+            }
+          }
+        }
+        p:first-child {
+          margin-bottom: 40px;
+        }
+      }
+    }
+    .middle {
+      margin-top: 100px;
+      .middle_invi {
+        width: 320px;
+        margin: 0 auto;
+        font-size: 20px;
+        line-height: 50px;
+        font-family: "WONBatang";
+        .invi_title {
+          font-family: "Nanum Pen Script", cursive;
+          font-size: 35px;
+          margin-bottom: 20px;
+        }
+      }
+      .middle_countdown {
+        margin-top: 50px;
+        font-family: "Nanum Pen Script", cursive;
+        font-size: 27px;
+        span {
+          font-size: 30px;
+        }
+      }
+      .middle_location_map {
+        width: 350px;
+        height: 300px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

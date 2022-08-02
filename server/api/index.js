@@ -40,4 +40,6 @@ router.post("/marriageform", (req, res) => {
     }
   );
 });
+
+router.post("/formsend", (req, res) => res.send({ data: req.body }));
 module.exports = router;

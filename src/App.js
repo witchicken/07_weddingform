@@ -1,21 +1,17 @@
-import "./App.css";
-import RegisterForm from "./RegisterForm";
-
+import "./reset.css";
+import Home from "./Home";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import Formview from "./Formview";
 
 function App() {
-  useEffect(() => {
-    axios
-      .get("/api/marriageform")
-      .then((res) => console.log(res))
-      .catch();
-  }, []);
-
   return (
-    <div className="App">
-      <RegisterForm />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/formview" element={<Formview />}></Route>
+      </Routes>
+    </Router>
   );
 }
 
