@@ -18,7 +18,6 @@ ul {
     max-width: 420px;
     margin: 0 auto;
     background-color: rgba(255, 230, 240, 1);
-    height: 3000px;
     .Top {
       position: relative;
       .Top_name {
@@ -74,6 +73,7 @@ ul {
           font-family: "Nanum Pen Script", cursive;
           font-size: 35px;
           margin-bottom: 20px;
+          color: palevioletred;
         }
       }
       .middle_countdown {
@@ -84,10 +84,84 @@ ul {
           font-size: 30px;
         }
       }
-      .middle_location_map {
-        width: 350px;
-        height: 300px;
-        margin: 0 auto;
+      .middle_location {
+        margin-top: 40px;
+        font-family: "Nanum Pen Script", cursive;
+        font-size: 40px;
+        h2 {
+          color: palevioletred;
+        }
+      }
+      p {
+        margin-top: 20px;
+      }
+      .middle_account {
+        margin-top: 60px;
+        h2 {
+          color: palevioletred;
+          font-size: 40px;
+          font-family: "Nanum Pen Script", cursive;
+        }
+        div {
+          p {
+            margin-bottom: 10px;
+          }
+          min-width: 350px;
+          margin: 0 auto;
+          font-size: 20px;
+        }
+        .middle_account_number {
+          display: flex;
+          width: 260px;
+          justify-content: space-between;
+        }
+      }
+    }
+    .bottom {
+      .bottom_guestbook {
+        margin-top: 60px;
+        h2 {
+          color: palevioletred;
+          font-size: 40px;
+          font-family: "Nanum Pen Script", cursive;
+        }
+        .guestbook_contents {
+          padding: 20px 0px;
+        }
+        .guestbook_db {
+          width: 230px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          button {
+            border: 2px solid pink;
+            padding: 5px 10px;
+            background-color: transparent;
+          }
+        }
+      }
+      .bottom_visitok {
+        margin-top: 60px;
+        padding-bottom: 20px;
+        h2 {
+          color: palevioletred;
+          font-size: 40px;
+          font-family: "Nanum Pen Script", cursive;
+        }
+        p {
+          padding: 20px 0px;
+
+          font-size: 18px;
+        }
+        button {
+          padding: 5px 10px;
+          border: 2px solid pink;
+          padding: 5px 10px;
+          background-color: transparent;
+        }
+      }
+      .bottom_footer {
+        padding: 40px 0px;
       }
     }
   }

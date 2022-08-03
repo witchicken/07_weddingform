@@ -1,0 +1,14 @@
+.Home {
+  background-color: black;
+  text-align: center;
+  font-family: "Song Myung", serif;
+  color: rgba(1, 1, 1, 0.8);
+  .Home_inner {
+    max-width: 420px;
+    margin: 0 auto;
+    background-color: rgba(255, 230, 240, 1);
+    h2 {
+      font-size: 40px;
+    }
+  }
+}
