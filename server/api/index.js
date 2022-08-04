@@ -2,44 +2,35 @@ const express = require("express");
 const router = express.Router();
 const db = require("../mysql/db");
 
-router.get("/marriageform", (req, res) => {
-  res.send({ test: "this is test" });
-});
-
 router.post("/marriageform", (req, res) => {
-  /*let marriage_man = req.body.marriage_man;
-  let marirage_woman = req.body.marirage_woman;
-  //이미지
-  let marriage_date = req.body.marriage_date;
-  let desciption_location = req.body.desciption_location;
-  let phone_man = req.body.phone_man;
-  let phone_woman = req.body.phone_woman;
-  let message_invite = req.body.message_invite;
-  let visitok = req.body.visitok;*/
+  let requestedData = req.body[0];
+  let requestedDateNow = req.body[1];
   let formData = {
-    marriage_man: req.body.marriage_man,
-    marriage_woman: req.body.marirage_woman,
-    marriage_date: req.body.marriage_date,
-    description_location: req.body.description_location,
-    phone_man: req.body.phone_man,
-    phone_woman: req.body.phone_woman,
-    message_invite: req.body.message_invite,
-    visitok: req.body.visitok,
+    marriage_man: requestedData.marriage_man,
+    marriage_woman: requestedData.marriage_woman,
+    marriage_date: requestedData.marriage_date,
+    message_invite: requestedData.message_invite,
+    description_location: requestedData.description_location,
+    phone_man: requestedData.phone_man,
+    phone_woman: requestedData.phone_woman,
+    man_account: requestedData.man_account,
+    woman_account: requestedData.woman_account,
+    datenow: requestedDateNow,
   };
   db.connect();
   db.query(
-    `INSERT INTO marriageform (marriage_man, marriage_woman,marriage_date,description_location, phone_man, phone_woman, message_invite, visitok) VALUES ('${formData.marriage_man}', '${formData.marriage_woman}','${formData.marriage_date}','${formData.description_location}', '${formData.phone_man}', '${formData.phone_woman}', '${formData.message_invite}', '${formData.visitok}');`,
+    `INSERT INTO savedform (marriage_man, marriage_woman,marriage_date,message_invite,description_location, phone_man, phone_woman,man_account,woman_account,datenow) VALUES ('${formData.marriage_man}', '${formData.marriage_woman}','${formData.marriage_date}', '${formData.message_invite}','${formData.description_location}', '${formData.phone_man}', '${formData.phone_woman}', '${formData.man_account}','${formData.woman_account}','${formData.datenow}');`,
     (err, data) => {
       if (err) {
+        res.send("에러가 발생했습니다.");
         console.log(err);
       } else {
         console.log("insert 성공");
-        res.send({ data: data });
+        res.send({ data: formData.datenow });
         db.end();
       }
     }
   );
 });
 
-router.post("/formsend", (req, res) => res.send({ data: req.body }));
 module.exports = router;

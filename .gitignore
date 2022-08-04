@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-
+sqltest.txt
 # production
 /build
 

@@ -160,6 +160,16 @@ ul {
           background-color: transparent;
         }
       }
+      .bottom_submit {
+        button {
+          padding: 10px 20px;
+          width: 200px;
+          border: 0.5px solid pink;
+          border-radius: 30px;
+          background-color: aliceblue;
+          cursor: pointer;
+        }
+      }
       .bottom_footer {
         padding: 40px 0px;
       }

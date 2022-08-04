@@ -49,58 +49,76 @@ function Home() {
               onChange={(e) => setMarriage_woman(e.target.value)}
             />
           </div>
-          메인 이미지: <input type="file" name="top_image" />
-          결혼 날짜{" "}
-          <input
-            type="date"
-            name="marriage_date"
-            onChange={(e) => {
-              setMarriage_date(e.target.value);
-              setIsCheckedData(true);
-              console.log(isCheckedDate);
-            }}
-          />
-          결혼 장소:{" "}
-          <input
-            type="text"
-            name="description_location"
-            onChange={(e) => setDescription_location(e.target.value)}
-          />
-          신랑 전화번호:{" "}
-          <input
-            type="text"
-            name="phone_man"
-            size="20"
-            onChange={(e) => setPhone_man(e.target.value)}
-          />
-          신부 전화번호:{" "}
-          <input
-            type="text"
-            name="phone_woman"
-            size="20"
-            onChange={(e) => setPhone_woman(e.target.value)}
-          />
-          초대 메시지:{" "}
-          <input
-            type="text"
-            name="message_invite"
-            size="50"
-            onChange={(e) => setMessage_invite(e.target.value)}
-          />
-          신랑측 계좌번호:{" "}
-          <input
-            type="text"
-            name="man_account"
-            size="50"
-            onChange={(e) => setMan_account(e.target.value)}
-          />
-          신부측 계좌번호:{" "}
-          <input
-            type="text"
-            name="woman_account"
-            size="50"
-            onChange={(e) => setWoman_account(e.target.value)}
-          />
+          <div>
+            메인 이미지: <input type="file" name="top_image" />
+          </div>
+          <div>
+            결혼 날짜{" "}
+            <input
+              type="date"
+              name="marriage_date"
+              onChange={(e) => {
+                setMarriage_date(e.target.value);
+                setIsCheckedData(true);
+                console.log(isCheckedDate);
+              }}
+            />
+          </div>
+          <div>
+            결혼 장소:{" "}
+            <input
+              type="text"
+              name="description_location"
+              onChange={(e) => setDescription_location(e.target.value)}
+            />
+          </div>
+          <div>
+            신랑 전화번호:{" "}
+            <input
+              type="text"
+              name="phone_man"
+              size="20"
+              onChange={(e) => setPhone_man(e.target.value)}
+            />
+          </div>
+          <div>
+            신부 전화번호:{" "}
+            <input
+              type="text"
+              name="phone_woman"
+              size="20"
+              onChange={(e) => setPhone_woman(e.target.value)}
+            />
+          </div>
+          <div>
+            초대 메시지:{" "}
+            <input
+              type="text"
+              name="message_invite"
+              size="50"
+              onChange={(e) => setMessage_invite(e.target.value)}
+            />
+          </div>
+
+          <div>
+            신랑측 계좌번호:{" "}
+            <input
+              type="text"
+              name="man_account"
+              size="50"
+              onChange={(e) => setMan_account(e.target.value)}
+            />
+          </div>
+          <div>
+            신부측 계좌번호:{" "}
+            <input
+              type="text"
+              name="woman_account"
+              size="50"
+              onChange={(e) => setWoman_account(e.target.value)}
+            />
+          </div>
+
           {isCheckedDate ? (
             <div>
               <Link to={"/formview"} state={data}>
