@@ -166,12 +166,20 @@ ul {
           width: 200px;
           border: 0.5px solid pink;
           border-radius: 30px;
-          background-color: aliceblue;
+          background-color: fuchsia;
           cursor: pointer;
         }
       }
       .bottom_footer {
         padding: 40px 0px;
+      }
+      .bottom_response {
+        margin-top: 30px;
+        p {
+          max-width: 300px;
+          margin: 0 auto;
+          padding-top: 15px;
+        }
       }
     }
   }

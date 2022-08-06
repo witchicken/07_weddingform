@@ -14,7 +14,10 @@ import Calendar from "react-calendar";
 import moment from "moment";
 import "./Calendar.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
+//copy npm
+import { CopyToClipboard } from "react-copy-to-clipboard";
 //kakao map
 const { kakao } = window;
 
@@ -150,10 +153,34 @@ function Formview() {
         }
         console.log(error.config);
       });
+    setIsResData(true);
   };
 
-  //복사 함수
-
+  //조건부 렌더링
+  const [isResData, setIsResData] = useState(false);
+  function HideID(props) {
+    return <p>ID키를 발급받으시려면 저장하기 버튼을 눌러주세요.</p>;
+  }
+  function ShowID(props) {
+    return (
+      <>
+        <CopyToClipboard text={resData} onCopy={() => alert("복사하였습니다.")}>
+          <span>{resData}</span>
+        </CopyToClipboard>
+        <p>
+          위의 ID번호를 눌러 복사후 저장해주세요.
+          <p>ID번호는 불러오기시 사용됩니다.</p>
+        </p>
+      </>
+    );
+  }
+  function IDcard(props) {
+    const test222 = props.test222;
+    if (test222 === false) {
+      return <HideID />;
+    }
+    return <ShowID />;
+  }
   return (
     <div className="Formview">
       <main className="inner">
@@ -266,7 +293,24 @@ function Formview() {
           <div className="bottom_submit">
             <button onClick={sendData}>저장하기</button>
           </div>
-          <div className="bottom_response"></div>
+          <div className="bottom_response">
+            <IDcard test222={isResData} />
+          </div>
+          <div>
+            <Link to="/">
+              <button
+                style={{
+                  padding: "10px 20px",
+                  border: "none",
+                  borderRadius: "5px",
+                  backgroundColor: "pink",
+                  cursor: "pointer",
+                }}
+              >
+                Home
+              </button>
+            </Link>
+          </div>
           <footer className="bottom_footer">
             <p>witchicken</p>
             <p>Copyright © 2022 witchicken 모든 권리 보유.</p>
